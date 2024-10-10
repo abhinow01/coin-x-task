@@ -83,7 +83,7 @@ CoinX is a cryptocurrency data management project that fetches real-time prices,
 ```
 MONGO_URI=<your-mongo-uri>
 CRYPTO_API_URL=<crypto-api-url>
-CRYPTO_API_IDS=bitcoin,ethereum,polygon
+CRYPTO_API_IDS=bitcoin,ethereum,matic-network
 CRYPTO_API_VS_CURRENCIES=usd
 CRON_SCHEDULE=0 */2 * * * 
 ```
