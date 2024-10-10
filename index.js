@@ -5,19 +5,17 @@ const logger = require('./utils/logger');
 const fetchAndStoreCryptoData = require('./jobs/cryptoJobs')
 const cryptoDataController = require('./controllers/cryptoDataController')
 const app = express();
-// Connect to the database
 mongoose.connect(config.mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     logger.info('MongoDB connected successfully.');
   })
   .catch((error) => {
     logger.error('MongoDB connection failed:', error.message);
-    process.exit(1); // Exit on failure
+    process.exit(1); 
   });
 
-// Start the background job immediately (optional)
 fetchAndStoreCryptoData();
-app.get('/stats', cryptoDataController.getStats);        // API for fetching latest data
+app.get('/stats', cryptoDataController.getStats);        
 app.get('/deviation', cryptoDataController.getDeviation);
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

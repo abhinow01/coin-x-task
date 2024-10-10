@@ -12,14 +12,12 @@ async function getStats(req, res) {
   }
 
   try {
-    // Fetch latest data for the coin
     const data = await CryptoData.findOne({ currency: coin }).sort({ timestamp: -1 });
 
     if (!data) {
       return res.status(404).json({ error: `No data found for ${coin}` });
     }
 
-    // Return the latest price, market cap, and 24h change
     return res.status(200).json({
       price: data.priceUSD,
       marketCap: data.marketCapUSD,

@@ -5,7 +5,6 @@ const logger = require('../utils/logger');
 const { fetchDataWithRetry } = require('../utils/apiUtils');
 const CryptoData = require('../models/cryptoData');
 
-// Function to fetch and store cryptocurrency data
 async function fetchAndStoreCryptoData() {
     logger.info('Fetching cryptocurrency data...');
   
@@ -18,9 +17,9 @@ async function fetchAndStoreCryptoData() {
   
     try {
       const data = await fetchDataWithRetry(config.cryptoApiUrl, params);
-      console.log(data);  // Log the fetched data for debugging
+      console.log(data); 
   
-      // Process the data
+      
       const cryptoData = [
         {
           currency: 'Bitcoin',
@@ -42,7 +41,6 @@ async function fetchAndStoreCryptoData() {
         }
       ];
   
-      // Store the data in the database
       await CryptoData.insertMany(cryptoData);
   
       logger.info('Crypto data stored successfully.');
@@ -51,7 +49,6 @@ async function fetchAndStoreCryptoData() {
     }
   }
 
-// Set up a cron job to run every 2 hours
 cron.schedule(config.cronSchedule, fetchAndStoreCryptoData);
 
 module.exports = fetchAndStoreCryptoData;

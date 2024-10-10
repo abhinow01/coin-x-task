@@ -79,9 +79,9 @@ CoinX is a cryptocurrency data management project that fetches real-time prices,
  7. ```logger.js```
   Sets up Winston for logging application events and errors.
 
-#Example  ```.env``` 
+# Example  ```.env``` 
 ```
- MONGO_URI=<your-mongo-uri>
+MONGO_URI=<your-mongo-uri>
 CRYPTO_API_URL=<crypto-api-url>
 CRYPTO_API_IDS=bitcoin,ethereum,polygon
 CRYPTO_API_VS_CURRENCIES=usd
