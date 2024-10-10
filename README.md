@@ -23,8 +23,8 @@ CoinX is a cryptocurrency data management project that fetches real-time prices,
 
 1. Clone the repository:
    ```bash git clone https://github.com/abhinow01/coin-x-task.git```
-2. cd `<your-project-directory>
-  npm install`
+2. cd `<your-project-directory>`
+  `npm install`
 3. Create your `.env` file with necessary variables
 4. Run the application : `npm run dev `
 
@@ -37,6 +37,7 @@ CoinX is a cryptocurrency data management project that fetches real-time prices,
   coin: The cryptocurrency for which stats are required (e.g., Bitcoin, Ethereum, Matic).
   **Example Request** :
   ``` GET /stats?coin=Bitcoin```
+
   ***Response*** : ``` {
   "price": 60671,
   "marketCap": 1199016348543.6194,
